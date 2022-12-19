@@ -1,0 +1,16 @@
+# Schemas related to debug problems
+
+"Supported languages"
+enum Lang{
+    C++
+    Python
+}
+
+"Represents a debug problem"
+type DebugProblem{
+    "The piece of code for debugging"
+    data: String
+    lang: Lang
+    problem: CodefunProblem
+    best_score: Int
+}

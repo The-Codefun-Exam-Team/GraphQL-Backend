@@ -1,0 +1,22 @@
+enum CodefunScoreType{
+    "Partial scoring"
+    oi,
+    "ICPC rules (Accepted on all tests)"
+    acm
+}
+type CodefunProblem{
+    id: Int
+    name: String
+    pcode: String
+    setter: User
+    
+    score: Int
+    scoretype: ScoreType
+
+    pgroup: String
+    statement: String
+    timelimit: Float
+
+    solved: Int
+    attempted: Int
+}

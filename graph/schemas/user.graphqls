@@ -1,0 +1,30 @@
+type Group{
+    id: Int
+    name: String
+}
+enum UserType{
+    Admin,
+    Problem Setter,
+    Normal,
+    Banned
+}
+interface User{
+    id: Int!
+
+    name: String!
+    username: String!
+    avatar: String!
+
+    role: UserType!
+    group: Group!
+}
+type ProblemStats{
+    problem: CodefunProblem!
+    "For further details, use this id to query in the legacy API"
+    submissionid: Int!
+    score: Int!
+}
+type DebugUser implements User{
+    rank: Int!
+    points: Float!
+}
