@@ -1,0 +1,19 @@
+type DebugUser implements User{
+    id: Int!
+
+    name: String!
+    username: String!
+    avatar: String!
+
+    rank: Int!
+    points: Float!
+    group: DebugGroup!
+}
+type DebugGroup implements Group{
+    id: Int
+    name: String
+    cardinality: Int!
+
+    "List of participants, sorted by rank."
+    participants(page: Int=1, limit: Int=20): [DebugUser!]!
+}

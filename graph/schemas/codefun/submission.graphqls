@@ -1,0 +1,36 @@
+enum CodefunTestVerdict{
+    AC, WA, MLE, RTE, TLE
+}
+type CodefunTestResult{
+    verdict: CodefunTestVerdict!
+    exectime: Float!
+    message: Float!
+}
+type CodefunTestsetResult{
+    verdicts: [CodefunTestResult!]!
+}
+type CodefunCompileErrorMsg{
+    message: String
+}
+union CodefunSubmissionResult = CodefunTestsetResult | CodefunCompileErrorMsg
+enum CodefunSubmissionVerdict{
+    AC, CE, DQ, MLE, Q, RTE, SS, TLE, TO, WA
+}
+type CodefunSubmission{
+    id: Int!
+    problem: CodefunProblem!
+
+    lang: Lang!
+    owner: CodefunUser!
+
+    exectime: Float!
+    submittime: Int!
+
+    score: Float!
+    scored: Boolean!
+    result: CodefunSubmissionVerdict!
+
+    "Written solution code"
+    code: String
+    judge: CodefunSubmissionResult!
+}

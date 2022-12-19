@@ -1,0 +1,17 @@
+# Schemas related to debug problems
+
+"Supported languages"
+enum Lang{
+    Cpp,
+    Python
+}
+
+"Represents a debug problem"
+type DebugProblem{
+    id: Int
+    pcode: String!
+    originalsub: CodefunSubmission!
+    
+    "Best score of the user on this problem."
+    bestscore: Int!
+}

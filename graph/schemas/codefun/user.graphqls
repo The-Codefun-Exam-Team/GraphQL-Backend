@@ -1,0 +1,30 @@
+enum CodefunUserType{
+    Admin,
+    Problem Setter,
+    Normal,
+    Banned
+}
+type CodefunUser implements User{
+    id: Int!
+
+    name: String!
+    username: String!
+    avatar: String!
+
+    role: CodefunUserType!
+    group: CodefunGroup!
+
+    rank: Int!
+    ratio: Float!
+    totalscore: Float!
+
+    solvedcount: Int!
+    solved: [CodefunSubmission!]!
+}
+type CodefunGroup implements Group{
+    id: Int
+    name: String
+    cardinality: Int!
+
+    participants: [CodefunUser!]!
+}

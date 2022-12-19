@@ -1,0 +1,8 @@
+type NewProblemErrorMsg{
+    message: String
+}
+union NewProblemReturn = DebugProblem | NewProblemErrorMsg
+type Mutation{
+    submit(pcode: String!, code: String!): DebugSubmission!
+    newproblem(pcode: String, submissionid: Int!): NewProblemReturn!
+}

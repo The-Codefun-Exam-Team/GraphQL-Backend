@@ -1,0 +1,6 @@
+type DebugSubmission{
+    problem: DebugProblem!
+    "Codefun submission corresponding to the debugged submission"
+    codefunsubmission: CodefunSubmission!
+    editdist: Float!
+}

@@ -1,0 +1,8 @@
+type Query{
+    users(id: Int!): DebugUser!
+    "If id is passed, then other args are omitted"
+    problems(page: Int=1, limit: Int=20, id: Int): [DebugProblem!]!
+    "If id is passed, then other args are omitted"
+    submissions(page: Int=1, limit: Int=20, id: Int): [DebugSubmission!]!
+    groups(page: Int=1, limit: Int=20, id: Int): [DebugGroup!]!
+}
